@@ -1,0 +1,51 @@
+<div class="card" style="border-radius: 1rem;margin: 5%;">
+    <div class="row g-0">
+      <div class="col-md-6 col-lg-5 d-none d-md-block">
+        <img  src="assets/login.jpg" alt="login form"
+          class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%; background-image: none;" />
+      </div>
+      <div class="col-md-6 col-lg-7 d-flex align-items-center">
+        <div class="card-body p-4 p-lg-5 text-black">
+  
+          <form #registerForm="ngForm" (ngSubmit) = "onSubmit(registerForm)">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input required type="text" name="name" class="form-control" ngModel #name="ngModel">
+                <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                    <p *ngIf="name.errors?.['required']">
+                        Full Name is required
+                    </p>
+                </div>
+            </div>
+
+    
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" class="form-control" ngModel>
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Password</label>
+                <input type="text" name="phone" class="form-control" ngModel>
+            </div>
+    
+            <div class="form-group">
+                <label for="website">Confirm Password</label>
+                <input type="text" name="website" class="form-control" ngModel>
+            </div>
+    
+            <hr>
+    
+            <pre>
+    
+            </pre>
+            <hr>
+    
+            <button class="btn-primary">Submit</button>
+    
+        </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>

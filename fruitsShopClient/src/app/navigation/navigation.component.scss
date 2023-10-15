@@ -1,0 +1,52 @@
+/* styles.css (or styles.scss) */
+
+  .navbar ul {
+    list-style-type: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display links horizontally */
+  }
+  
+  .navbar li {
+    margin-right: 20px; /* Add space between navbar items */
+  }
+  
+  .navbar a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Text color for links */
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+
+
+  /* navigation.component.css (or navigation.component.scss) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    
+  }
+  
+  .left, .right {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right {
+    display: flex;
+  }
+  
+  .right li {
+    margin-left: 20px;
+  }
+  

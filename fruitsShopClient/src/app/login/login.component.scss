@@ -1,0 +1,31 @@
+/* login.component.css (or login.component.scss) */
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .image-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .form-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  /* Add more styling to form elements as needed */
