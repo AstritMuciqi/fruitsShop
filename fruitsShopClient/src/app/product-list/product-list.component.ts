@@ -42,8 +42,15 @@ export class ProductListComponent {
   //   });
   // }
   
-  deleteProduct(product: any) {
-    alert(`Delete product: ${product.name}`);
+  deleteProduct(productId: string) {
+    axios
+      .delete(`http://localhost:8000/api/Product/${productId}`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   addProduct() {

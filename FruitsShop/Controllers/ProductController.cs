@@ -73,7 +73,7 @@ namespace FruitsShop.Controllers
 
             _context.Products.Update(existingProduct);
 
-            //var result =  await _context.SaveChangesAsync() > 0;
+            await _context.SaveChangesAsync();
 
 
             return Ok(new { message = "Product edited successfully!", existingProduct });
@@ -91,7 +91,7 @@ namespace FruitsShop.Controllers
             if (product != null)
             {
                 _context.Products.Remove(product);
-
+                await _context.SaveChangesAsync();
                 return Ok();
 
             }
