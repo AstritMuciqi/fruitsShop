@@ -10,7 +10,8 @@ namespace FruitsShop.Helpers
 {
     public class JwtService
     {
-        private string secureKey = "this is a very secure key";
+        private string secureKey = "this is my custom Secret key for authentication";
+
         public string Generate(string id)
         {
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secureKey));

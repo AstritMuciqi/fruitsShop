@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'; // Assuming you are using NgbModal
+import axios from 'axios';
 import { ProductModalComponent } from '../product-modal/product-modal.component';
 @Component({
   selector: 'app-product-list',
@@ -9,27 +10,37 @@ import { ProductModalComponent } from '../product-modal/product-modal.component'
   
 })
 export class ProductListComponent {
-  rowData: any; // Data from your table row
+  products: any; // Data from your table row
 
-  constructor(private modalService: NgbModal) {}
-
-
-  products = [
-    { name: 'Product 1', price: 19.99, category: 'Category A', date: '01.01.2023' },
-    { name: 'Product 2', price: 29.99, category: 'Category B', date: '02.01.2023' },
-    { name: 'Product 3', price: 39.99, category: 'Category A', date: '03.01.2023' },
-  ];
-
-  openModal(product:any) {
-    const modalRef = this.modalService.open(ProductModalComponent);
-    modalRef.componentInstance.rowData = product;
+  ngOnInit(){
+      axios
+      .get('http://localhost:8000/api/Product')
+      .then((response) => {
+        this.products = response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    
+  
   }
 
 
 
-  editProduct(product: any) {
-    alert(`Edit product: ${product.name}`);
-  }
+
+
+
+
+  // editProduct(product: any) {
+  //   axios
+  //   .post('http://localhost:8000/api/Product/EditProduct', product)
+  //   .then((response) => {
+  //     console.log(response);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+  // }
   
   deleteProduct(product: any) {
     alert(`Delete product: ${product.name}`);

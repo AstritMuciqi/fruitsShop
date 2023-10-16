@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductModalComponent } from './product-modal/product-modal.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
+import { ProductEditModalComponent } from './product-edit-modal/product-edit-modal.component';
 
 
 
@@ -26,7 +27,8 @@ import { NewUserComponent } from './components/new-user/new-user.component';
     ProductFormComponent,
     SignupComponent,
     ProductModalComponent,
-    NewUserComponent
+    NewUserComponent,
+    ProductEditModalComponent
   ],
   imports: [
     BrowserModule,

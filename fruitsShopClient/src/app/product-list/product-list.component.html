@@ -3,9 +3,9 @@
   <div style="display: flex; justify-content: space-between; margin-bottom: 3%;">
     <h2>Product Form</h2>
     <!-- product-list.component.html -->
-    <!-- <button type="button" class="btn btn-primary" (click)="openModal(product)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Add Product
-  </button> -->
+  </button>
   
   </div>
   <app-product-modal></app-product-modal>
@@ -23,12 +23,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{ product.name }}</td>
-        <td>{{ product.price | currency }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.price }}</td>
         <td>{{ product.category }}</td>
         <td>{{ product.date }}</td>
+
         <td>
-          <button style="margin-right: 3%;" class="btn btn-outline-primary" (click)="openModal(product)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" style="margin-right: 3%;" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
           <button class="btn btn-outline-danger" (click)="deleteProduct(product)">
